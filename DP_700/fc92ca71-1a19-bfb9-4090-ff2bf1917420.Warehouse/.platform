@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Notebook",
-    "displayName": "data science"
+    "type": "Warehouse",
+    "displayName": "fab_warehouse",
+    "description": ""
   },
   "config": {
     "version": "2.0",
-    "logicalId": "dd1a7dbc-d90e-b6ae-4d9c-a399f10e6781"
+    "logicalId": "fc92ca71-1a19-bfb9-4090-ff2bf1917420"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "runtime": "PYTHON",
+  "functionsMetadata": [
+    {
+      "name": "hello_fabric",
+      "scriptFile": "function_app.py",
+      "bindings": [
+        {
+          "name": "req",
+          "type": "HttpTrigger",
+          "direction": "In",
+          "authLevel": "Anonymous",
+          "methods": [
+            "POST"
+          ],
+          "route": ""
+        }
+      ],
+      "fabricProperties": {
+        "fabricMetadataSchemaVersion": "1.1.0",
+        "fabricFunctionReturnType": "str",
+        "fabricFunctionParameters": [
+          {
+            "name": "name",
+            "dataType": "str",
+            "hasDefaultValue": false,
+            "defaultValue": null
+          }
+        ]
+      },
+      "functionCode": "@udf.function()\ndef hello_fabric(name: str) -\u003E str:\n    logging.info(\u0027Python UDF trigger function processed a request.\u0027)\n\n    return f\u0022Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!\u0022"
+    }
+  ]
+}

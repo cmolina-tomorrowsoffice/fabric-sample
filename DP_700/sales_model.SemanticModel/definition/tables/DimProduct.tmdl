@@ -1,0 +1,58 @@
+table DimProduct
+	lineageTag: 909d35b7-cc1e-4555-9a39-349efb4a364c
+	sourceLineageTag: [dbo].[DimProduct]
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 27328213-d9e8-40d9-97d6-69a384c63edd
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductAltKey
+		dataType: string
+		lineageTag: e8b5ac4b-17e9-46b6-9dd3-11b7fe6b9ffd
+		sourceLineageTag: ProductAltKey
+		summarizeBy: none
+		sourceColumn: ProductAltKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 3c3ac820-0681-4de7-841f-6acf40fa4d0e
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: df0a722d-5cd9-4416-a5e5-1f11304b70b2
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column ListPrice
+		dataType: int64
+		formatString: 0
+		lineageTag: e159f9d3-fc97-45b3-a5ec-5ff6b17e742e
+		sourceLineageTag: ListPrice
+		summarizeBy: none
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProduct = entity
+		mode: directLake
+		source
+			entityName: DimProduct
+			schemaName: dbo
+			expressionSource: 'DirectLake - fab_warehouse'
+

@@ -1,0 +1,304 @@
+{
+  "schema_version": 75,
+  "changeDetection": {
+    "kind": "liveUpdates",
+    "fallbackRefreshRate": "5m",
+    "minRefreshRate": "30s"
+  },
+  "tiles": [
+    {
+      "id": "da81e45d-06e4-4cc6-9b31-24c93bb21a0e",
+      "title": "Average Prices",
+      "visualType": "column",
+      "pageId": "c3fa1ce2-1e49-4905-89a4-a02f16ea55f0",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "2de40278-90cb-40ed-91f9-735b285437a8"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "seriesColors": {},
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "5b65bb52-1397-470c-ad04-8b986873b4f2",
+      "title": "Bikes and Docks",
+      "visualType": "stackedbar",
+      "pageId": "1f2de64f-eb6a-4204-965e-a962e4d02bae",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "ebf525c7-d21f-4bdf-8805-b6535ff8953b"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "seriesColors": {},
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": [
+          "No_Bikes",
+          "No_Empty_Docks"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "6718e5cc-d983-47ba-8dba-c47871d5d1bb",
+      "title": "Bike Locations",
+      "visualType": "map",
+      "pageId": "1f2de64f-eb6a-4204-965e-a962e4d02bae",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "width": 12,
+        "height": 11
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "2544b6e1-853f-4100-94ca-bea0b3cfe95c"
+      },
+      "visualOptions": {
+        "map__latitudeColumn": null,
+        "map__longitudeColumn": null,
+        "map__labelColumn": null,
+        "map__sizeColumn": null,
+        "map__sizeDisabled": false,
+        "map__geoType": "numeric",
+        "map__geoPointColumn": null
+      }
+    },
+    {
+      "id": "de873664-349f-4fc7-a680-765817a58504",
+      "title": "Untitled",
+      "visualType": "table",
+      "pageId": "1f2de64f-eb6a-4204-965e-a962e4d02bae",
+      "layout": {
+        "x": 0,
+        "y": 11,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "f0ccce73-a802-4f2b-9973-8a1595520da9"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    }
+  ],
+  "baseQueries": [
+    {
+      "id": "4e97f0f1-7d1b-4735-a9bf-54a97046ba52",
+      "queryId": "0014a312-d52c-4fbd-b42e-3a8557c1aaee",
+      "variableName": "base_bike_data"
+    }
+  ],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "4fa95172-cc9b-4dc7-8588-478d0e4e9a23",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    },
+    {
+      "kind": "string",
+      "id": "b14b3580-7963-4314-95cc-301123d07c4f",
+      "displayName": "Neighbourhood",
+      "description": "",
+      "variableName": "selected_neighbourhoods",
+      "selectionType": "array",
+      "includeAllOption": true,
+      "defaultValue": {
+        "kind": "all"
+      },
+      "dataSource": {
+        "kind": "query",
+        "columns": {
+          "value": "Neighbourhood"
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "07da88cd-a327-48bb-a630-95d57362cccf"
+        },
+        "autoReset": true
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "dec50554-44f3-4bb6-9a79-bdef34b94e13",
+      "kind": "kusto-trident",
+      "name": "fab_eventhouse",
+      "clusterUri": "",
+      "databaseArtifactId": "86686c6d-cc88-4e5e-9357-daee9365d387",
+      "database": "9365d387-daee-9357-4e5e-cc8886686c6d",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "kind": "kusto-trident",
+      "clusterUri": "",
+      "name": "fab_eventhouse-2",
+      "databaseArtifactId": "86686c6d-cc88-4e5e-9357-daee9365d387",
+      "database": "9365d387-daee-9357-4e5e-cc8886686c6d",
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "id": "fd0e202a-400f-47db-b8f2-ea1962cfef56"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Stock",
+      "id": "c3fa1ce2-1e49-4905-89a4-a02f16ea55f0"
+    },
+    {
+      "name": "Bike",
+      "id": "1f2de64f-eb6a-4204-965e-a962e4d02bae"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dec50554-44f3-4bb6-9a79-bdef34b94e13"
+      },
+      "text": " stock\n | where [\"time\"] > ago(5m)\n | summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n | project symbol, avgPrice",
+      "id": "2de40278-90cb-40ed-91f9-735b285437a8",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dec50554-44f3-4bb6-9a79-bdef34b94e13"
+      },
+      "text": " base_bike_data\r\n     | project Neighbourhood, latest_observation, No_Bikes, No_Empty_Docks\r\n     | order by Neighbourhood asc",
+      "id": "ebf525c7-d21f-4bdf-8805-b6535ff8953b",
+      "usedVariables": [
+        "base_bike_data"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dec50554-44f3-4bb6-9a79-bdef34b94e13"
+      },
+      "text": "base_bike_data\r\n     | project Neighbourhood, latest_observation, Latitude, Longitude, No_Bikes\r\n     | order by Neighbourhood asc",
+      "id": "2544b6e1-853f-4100-94ca-bea0b3cfe95c",
+      "usedVariables": [
+        "base_bike_data"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dec50554-44f3-4bb6-9a79-bdef34b94e13"
+      },
+      "text": " base_bike_data\r\n | project Neighbourhood, latest_observation\r\n | order by latest_observation desc",
+      "id": "f0ccce73-a802-4f2b-9973-8a1595520da9",
+      "usedVariables": [
+        "base_bike_data"
+      ]
+    },
+    {
+      "id": "0014a312-d52c-4fbd-b42e-3a8557c1aaee",
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dec50554-44f3-4bb6-9a79-bdef34b94e13"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\n raw_bikes\n     | where ingestion_time() between (ago(30min) .. now())\n       and (isempty(['selected_neighbourhoods']) or Neighbourhood  in (['selected_neighbourhoods']))\n     | summarize latest_observation = arg_max(ingestion_time(), *) by Neighbourhood",
+      "usedVariables": [
+        "selected_neighbourhoods"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "dec50554-44f3-4bb6-9a79-bdef34b94e13"
+      },
+      "text": "// Please enter your KQL query (Example):\n// <table name>\n// | where <datetime column> between (['_startTime'] .. ['_endTime']) // Time range filtering\n// | take 100\n  raw_bikes\n  | distinct Neighbourhood\n  | order by Neighbourhood asc",
+      "id": "07da88cd-a327-48bb-a630-95d57362cccf",
+      "usedVariables": []
+    }
+  ],
+  "embeddedApps": []
+}

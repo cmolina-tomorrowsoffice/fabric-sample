@@ -1,0 +1,14 @@
+[
+  {
+    "name": "adls_data",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "4cc75f70-ca4f-4ec2-88f2-2d04c6b63627",
+        "location": "https://fabdatalakeinterloop.dfs.core.windows.net",
+        "subpath": "/data"
+      }
+    }
+  }
+]

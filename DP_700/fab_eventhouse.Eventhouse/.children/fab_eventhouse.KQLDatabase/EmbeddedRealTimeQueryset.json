@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "0586fdab-dad9-4978-bee2-d0a36002aaea",
+        "clusterUri": "https://trd-8uyukasfr30b78stn9.z9.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "86686c6d-cc88-4e5e-9357-daee9365d387"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "fc535a3a-0887-4586-854a-71ebc1617ce1",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\n stock\n | take 100\n\n stock\n | where [\"time\"] > ago(5m)\n | summarize avgPrice = avg(todecimal(bidPrice)) by symbol\n | project symbol, avgPrice\n\n\n ['bikes']\n | take 100\n\n// This query returns the number of ingestions per hour in the given table.\nYOUR_TABLE_HERE\n| summarize IngestionCount = count() by bin(ingestion_time(), 1h)\n\n",
+        "title": "Tab",
+        "dataSourceId": "0586fdab-dad9-4978-bee2-d0a36002aaea"
+      }
+    ],
+    "querysetType": "Embedded"
+  }
+}

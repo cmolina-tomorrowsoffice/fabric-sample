@@ -1,0 +1,104 @@
+[
+  {
+    "uniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9",
+    "payload": {
+      "name": "Package delivery sample",
+      "type": "samples"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "deb5dc6d-4012-47d2-b5f0-1b8f6a6d5513",
+    "payload": {
+      "name": "Package",
+      "parentContainer": {
+        "targetUniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "f4aef383-b409-4a65-bf69-cec7ff24a7c2",
+    "payload": {
+      "name": "PackageId",
+      "parentObject": {
+        "targetUniqueIdentifier": "deb5dc6d-4012-47d2-b5f0-1b8f6a6d5513"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"IdPartStep\",\"id\":\"c9a277e5-d60c-4139-be3e-a76084b2c90f\",\"rows\":[{\"name\":\"TypeAssertion\",\"kind\":\"TypeAssertion\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "7d7a7037-655b-4d23-9131-2880ca1452e0",
+    "payload": {
+      "name": "PackageId tuple",
+      "parentObject": {
+        "targetUniqueIdentifier": "deb5dc6d-4012-47d2-b5f0-1b8f6a6d5513"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.1\",\"steps\":[{\"name\":\"IdStructureStep\",\"id\":\"20f19324-27f9-4eed-9767-ff480c1841de\",\"rows\":[{\"name\":\"IdPart\",\"kind\":\"IdPart\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"f4aef383-b409-4a65-bf69-cec7ff24a7c2\"}],\"name\":\"idPart\"}]}]}]}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "27061a49-f581-4749-b16c-9b56e8365319",
+    "payload": {
+      "name": "Redmond packages",
+      "parentContainer": {
+        "targetUniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "f8c319a0-6de4-4ead-9ca1-d909e57b3970",
+    "payload": {
+      "name": "PackageId",
+      "parentObject": {
+        "targetUniqueIdentifier": "27061a49-f581-4749-b16c-9b56e8365319"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"591a2d3c-fcb3-4235-aec9-1f9f28c88ce6\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "158bbdf3-3665-42c7-897b-a20afc975175",
+    "payload": {
+      "name": "PackageId",
+      "parentObject": {
+        "targetUniqueIdentifier": "27061a49-f581-4749-b16c-9b56e8365319"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "78efa06c-8bec-4436-8876-f01e6992f7c9"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"ea748429-dfe6-4453-92a9-df5016e4f939\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"f8c319a0-6de4-4ead-9ca1-d909e57b3970\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

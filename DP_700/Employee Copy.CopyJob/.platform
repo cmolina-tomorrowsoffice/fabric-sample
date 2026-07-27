@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Dataflow",
-    "displayName": "Dataflow 1"
+    "type": "CopyJob",
+    "displayName": "Employee Copy"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "31a30318-e70a-bcfa-40f5-a75fc7ca3372"
+    "logicalId": "4dcdc6a7-5a94-9a1a-4e00-c2eca7fc3ab3"
   }
 }

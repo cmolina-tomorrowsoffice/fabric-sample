@@ -1,0 +1,159 @@
+{
+  "properties": {
+    "jobMode": "CDC",
+    "source": {
+      "type": "DataWarehouseTable",
+      "connectionSettings": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "4536513c-3bb4-aa78-4241-d6ca589fcaee",
+          "endPoint": "si3xqapbnvtufpjpieexpgxebi-hjzcvacrobduhg2s3ijp63szym.datawarehouse.fabric.microsoft.com"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "bea091ab-14da-924b-4316-cc534b0c81b7",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "529cb6b9-e0c0-4ac1-ad3b-237d8bc84c70",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Employee"
+          },
+          "changeDataSettings": {
+            "readMethod": "SnapshotPlusIncremental",
+            "columns": [
+              {
+                "name": "ModifiedDate",
+                "type": "DateTime",
+                "physicalType": "datetime2"
+              }
+            ]
+          },
+          "partitionSettings": {
+            "partitionOption": "None"
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Employee"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "EmployeeID",
+                "type": "Int32",
+                "physicalType": "int"
+              },
+              "destination": {
+                "name": "EmployeeID",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "FirstName",
+                "type": "String",
+                "physicalType": "varchar",
+                "length": "40"
+              },
+              "destination": {
+                "name": "FirstName",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "LastName",
+                "type": "String",
+                "physicalType": "varchar",
+                "length": "40"
+              },
+              "destination": {
+                "name": "LastName",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "Position",
+                "type": "String",
+                "physicalType": "varchar",
+                "length": "60"
+              },
+              "destination": {
+                "name": "Position",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "ModifiedDate",
+                "type": "DateTime",
+                "physicalType": "datetime2",
+                "precision": 3
+              },
+              "destination": {
+                "name": "ModifiedDate",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "RunId",
+                "type": "String"
+              },
+              "destination": {
+                "name": "RunId",
+                "physicalType": "string"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        },
+        "auditColumns": [
+          {
+            "name": "RunId",
+            "value": "$$COPYJOBRUNID"
+          },
+          {
+            "name": "JobName",
+            "value": "$$COPYJOBNAME"
+          },
+          {
+            "name": "WorkspaceId",
+            "value": "$$WORKSPACEID"
+          }
+        ]
+      }
+    }
+  ]
+}
